@@ -7,12 +7,13 @@ The CAN interface used to gather the data used to reverse-engineer the DBC was t
 ## Usage
 
 There are a bunch of tools out there to work with DBC files and parse CAN messages. Here's an example using the Python [cantools](https://pypi.org/project/cantools/) module.
-
+```
   $ python3
   >>> import cantools
   >>> db = cantools.database.load_file('vs30_canb_psm.dbc')
   >>> db.decode_message(0x3a5, b"\x00\x10\x01\x00\x00\x00\x00\x00")
   {'SlidingDoorState': 'Closed'}
   >>>
-  
+```
+
 As I figure out more messages they will be added to the DBC. Contributions are welcome!
