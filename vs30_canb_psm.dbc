@@ -34,39 +34,44 @@ NS_ :
 BS_:
 
 BU_: ABS SlidingDoorController
+VAL_TABLE_ WheelDirection 2 "Reverse" 1 "Forward" 0 "Stopped" ;
 VAL_TABLE_ SlidingDoorState 1 "Closed" 0 "Open" ;
 
 
-BO_ 163 WheelSpeedRear: 8 ABS
- SG_ WheelMovingRight : 54|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ WheelMovingLeft : 30|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ WheelSpeedRight : 40|14@1- (0.0625,12) [-524276|524284] "km/h" Vector__XXX
- SG_ WheelSpeedLeft : 16|14@1- (0.0625,12) [-2036|2059.9375] "km/h" Vector__XXX
+BO_ 161 WheelSpeedRear: 8 ABS
+ SG_ WheelMovingRight : 54|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ WheelMovingLeft : 30|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ WheelSpeedRight : 16|14@1+ (0.068285,0) [0|1118.713155] "km/h" Vector__XXX
+ SG_ WheelSpeedLeft : 40|14@1+ (0.068285,0) [0|1118.713155] "km/h" Vector__XXX
 
-BO_ 161 WheelSpeedFront: 8 ABS
- SG_ WheelMovingRight : 54|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ WheelMovingLeft : 30|1@1+ (1,0) [0|1] "" Vector__XXX
- SG_ WheelSpeedRight : 40|14@1- (0.0625,12) [-524276|524284] "km/h" Vector__XXX
- SG_ WheelSpeedLeft : 16|14@1- (0.0625,12) [-2036|2059.9375] "km/h" Vector__XXX
+BO_ 163 WheelSpeedFront: 8 ABS
+ SG_ WheelMovingRight : 54|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ WheelMovingLeft : 30|2@1+ (1,0) [0|3] "" Vector__XXX
+ SG_ WheelSpeedRight : 16|14@1+ (0.068285,0) [0|1118.713155] "km/h" Vector__XXX
+ SG_ WheelSpeedLeft : 40|14@1+ (0.068285,0) [0|1118.713155] "km/h" Vector__XXX
 
 BO_ 933 SlidingDoorController: 8 SlidingDoorController
  SG_ SlidingDoorState : 12|1@1+ (1,0) [0|1] "" Vector__XXX
 
 
 
-CM_ SG_ 163 WheelMovingRight "Wheel moving bit";
-CM_ SG_ 163 WheelMovingLeft "Wheel moving bit";
-CM_ SG_ 163 WheelSpeedRight "Wheel speed, right, km/h";
-CM_ SG_ 163 WheelSpeedLeft "Wheel speed, left, km/h";
-CM_ SG_ 161 WheelMovingRight "Wheel moving bit";
-CM_ SG_ 161 WheelMovingLeft "Wheel moving bit";
+CM_ SG_ 161 WheelMovingRight "Wheel direction, right";
+CM_ SG_ 161 WheelMovingLeft "Wheel direction, left";
 CM_ SG_ 161 WheelSpeedRight "Wheel speed, right, km/h";
 CM_ SG_ 161 WheelSpeedLeft "Wheel speed, left, km/h";
+CM_ SG_ 163 WheelMovingRight "Wheel direction, right";
+CM_ SG_ 163 WheelMovingLeft "Wheel direction, left";
+CM_ SG_ 163 WheelSpeedRight "Wheel speed, right, km/h";
+CM_ SG_ 163 WheelSpeedLeft "Wheel speed, left, km/h";
 CM_ SG_ 933 SlidingDoorState "Sliding door state";
 BA_DEF_  "MultiplexExtEnabled" ENUM  "No","Yes";
 BA_DEF_  "BusType" STRING ;
 BA_DEF_DEF_  "MultiplexExtEnabled" "No";
 BA_DEF_DEF_  "BusType" "CAN";
 BA_ "BusType" "CAN";
+VAL_ 161 WheelMovingRight 2 "Reverse" 1 "Forward" 0 "Stopped" ;
+VAL_ 161 WheelMovingLeft 2 "Reverse" 1 "Forward" 0 "Stopped" ;
+VAL_ 163 WheelMovingRight 2 "Reverse" 1 "Forward" 0 "Stopped" ;
+VAL_ 163 WheelMovingLeft 2 "Reverse" 1 "Forward" 0 "Stopped" ;
 VAL_ 933 SlidingDoorState 1 "Closed" 0 "Open" ;
 
