@@ -41,14 +41,14 @@ VAL_TABLE_ SlidingDoorState 1 "Closed" 0 "Open" ;
 BO_ 161 WheelSpeedRear: 8 ABS
  SG_ WheelMovingRight : 54|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ WheelMovingLeft : 30|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ WheelSpeedRight : 16|14@1+ (0.068285,0) [0|1118.713155] "km/h" Vector__XXX
- SG_ WheelSpeedLeft : 40|14@1+ (0.068285,0) [0|1118.713155] "km/h" Vector__XXX
+ SG_ WheelSpeedRight : 16|14@1+ (0.068355,0) [0|1119.859965] "km/h" Vector__XXX
+ SG_ WheelSpeedLeft : 40|14@1+ (0.068355,0) [0|1119.859965] "km/h" Vector__XXX
 
 BO_ 163 WheelSpeedFront: 8 ABS
  SG_ WheelMovingRight : 54|2@1+ (1,0) [0|3] "" Vector__XXX
  SG_ WheelMovingLeft : 30|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ WheelSpeedRight : 16|14@1+ (0.068285,0) [0|1118.713155] "km/h" Vector__XXX
- SG_ WheelSpeedLeft : 40|14@1+ (0.068285,0) [0|1118.713155] "km/h" Vector__XXX
+ SG_ WheelSpeedRight : 16|14@1+ (0.068355,0) [0|1119.859965] "km/h" Vector__XXX
+ SG_ WheelSpeedLeft : 40|14@1+ (0.068355,0) [0|1119.859965] "km/h" Vector__XXX
 
 BO_ 933 SlidingDoorController: 8 SlidingDoorController
  SG_ SlidingDoorState : 12|1@1+ (1,0) [0|1] "" Vector__XXX
