@@ -2,7 +2,7 @@
 DBC file for CAN B on the VS30 Sprinters
 
 [DBC](https://docs.openvehicles.com/en/latest/components/vehicle_dbc/docs/dbc-primer.html) is the industry-standard file format to describe [CAN bus](https://en.wikipedia.org/wiki/CAN_bus) messages. This repo is a work in progress to decode CAN bus B of a 2020 Sprinter (VS30). Its applicability to other vehicles is unknown.
-The CAN interface used to gather the data used to reverse-engineer the DBC was the CAN B interface on the PSM wiring harness under the driver's seat; I believe this interface is firewalled from the actual CAN B bus, but the messages should be the same wherever they are gathered.
+The CAN interface used to gather the data used to reverse-engineer the DBC was the CAN B interface on the PSM wiring harness under the driver's seat; I believe this interface is firewalled from the actual CAN B bus, but the messages should be the same wherever they are gathered. This interface is 250kbps and the connector pinout can be found [here](https://www.mbvans.com/content/dam/mb-vans/us/upfitter/bulletins/my19/sprinter-psm.pdf).
 
 ## Usage
 
