@@ -1,59 +1,61 @@
 VERSION ""
 
 
-NS_ : 
-	NS_DESC_
-	CM_
-	BA_DEF_
-	BA_
-	VAL_
-	CAT_DEF_
-	CAT_
-	FILTER
-	BA_DEF_DEF_
-	EV_DATA_
-	ENVVAR_DATA_
-	SGTYPE_
-	SGTYPE_VAL_
-	BA_DEF_SGTYPE_
-	BA_SGTYPE_
-	SIG_TYPE_REF_
-	VAL_TABLE_
-	SIG_GROUP_
-	SIG_VALTYPE_
-	SIGTYPE_VALTYPE_
-	BO_TX_BU_
-	BA_DEF_REL_
-	BA_REL_
-	BA_DEF_DEF_REL_
-	BU_SG_REL_
-	BU_EV_REL_
-	BU_BO_REL_
-	SG_MUL_VAL_
+NS_ :
+    NS_DESC_
+    CM_
+    BA_DEF_
+    BA_
+    VAL_
+    CAT_DEF_
+    CAT_
+    FILTER
+    BA_DEF_DEF_
+    EV_DATA_
+    ENVVAR_DATA_
+    SGTYPE_
+    SGTYPE_VAL_
+    BA_DEF_SGTYPE_
+    BA_SGTYPE_
+    SIG_TYPE_REF_
+    VAL_TABLE_
+    SIG_GROUP_
+    SIG_VALTYPE_
+    SIGTYPE_VALTYPE_
+    BO_TX_BU_
+    BA_DEF_REL_
+    BA_REL_
+    BA_DEF_DEF_REL_
+    BU_SG_REL_
+    BU_EV_REL_
+    BU_BO_REL_
+    SG_MUL_VAL_
 
-BS_:
-
-BU_: ABS SlidingDoorController
-VAL_TABLE_ WheelDirection 2 "Reverse" 1 "Forward" 0 "Stopped" ;
-VAL_TABLE_ SlidingDoorState 1 "Closed" 0 "Open" ;
-
-
+BS_: 
+BU_: ABS SlidingDoorController RearDoorState Handbrake CentralLocking 
 BO_ 161 WheelSpeedRear: 8 ABS
- SG_ WheelMovingRight : 54|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ WheelMovingLeft : 30|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ WheelSpeedRight : 16|14@1+ (0.068355,0) [0|1119.859965] "km/h" Vector__XXX
- SG_ WheelSpeedLeft : 40|14@1+ (0.068355,0) [0|1119.859965] "km/h" Vector__XXX
+   SG_ WheelMovingRight : 54|2@1+ (1,0) [0|3] "" Vector__XXX
+   SG_ WheelMovingLeft : 30|2@1+ (1,0) [0|3] "" Vector__XXX
+   SG_ WheelSpeedRight : 16|14@1+ (0.068355,0) [0|1119.86] "km/h" Vector__XXX
+   SG_ WheelSpeedLeft : 40|14@1+ (0.068355,0) [0|1119.86] "km/h" Vector__XXX
 
 BO_ 163 WheelSpeedFront: 8 ABS
- SG_ WheelMovingRight : 54|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ WheelMovingLeft : 30|2@1+ (1,0) [0|3] "" Vector__XXX
- SG_ WheelSpeedRight : 16|14@1+ (0.068355,0) [0|1119.859965] "km/h" Vector__XXX
- SG_ WheelSpeedLeft : 40|14@1+ (0.068355,0) [0|1119.859965] "km/h" Vector__XXX
+   SG_ WheelMovingRight : 54|2@1+ (1,0) [0|3] "" Vector__XXX
+   SG_ WheelMovingLeft : 30|2@1+ (1,0) [0|3] "" Vector__XXX
+   SG_ WheelSpeedRight : 16|14@1+ (0.068355,0) [0|1119.86] "km/h" Vector__XXX
+   SG_ WheelSpeedLeft : 40|14@1+ (0.068355,0) [0|1119.86] "km/h" Vector__XXX
 
 BO_ 933 SlidingDoorController: 8 SlidingDoorController
- SG_ SlidingDoorState : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+   SG_ SlidingDoorState : 12|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 2147484497 RearDoorState: 8 RearDoorState
+   SG_ RearDoorState : 4|2@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 2147484197 HandbrakeMsg: 8 Handbrake
+   SG_ HandbrakeState : 16|3@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 2147484423 CentralLockingFlags: 8 CentralLocking
+   SG_ CentralLockingFlagsB3 : 24|8@1+ (1,0) [0|1] "" Vector__XXX
 
 CM_ SG_ 161 WheelMovingRight "Wheel direction, right";
 CM_ SG_ 161 WheelMovingLeft "Wheel direction, left";
@@ -64,14 +66,36 @@ CM_ SG_ 163 WheelMovingLeft "Wheel direction, left";
 CM_ SG_ 163 WheelSpeedRight "Wheel speed, right, km/h";
 CM_ SG_ 163 WheelSpeedLeft "Wheel speed, left, km/h";
 CM_ SG_ 933 SlidingDoorState "Sliding door state";
-BA_DEF_  "MultiplexExtEnabled" ENUM  "No","Yes";
-BA_DEF_  "BusType" STRING ;
-BA_DEF_DEF_  "MultiplexExtEnabled" "No";
-BA_DEF_DEF_  "BusType" "CAN";
-BA_ "BusType" "CAN";
-VAL_ 161 WheelMovingRight 2 "Reverse" 1 "Forward" 0 "Stopped" ;
-VAL_ 161 WheelMovingLeft 2 "Reverse" 1 "Forward" 0 "Stopped" ;
-VAL_ 163 WheelMovingRight 2 "Reverse" 1 "Forward" 0 "Stopped" ;
-VAL_ 163 WheelMovingLeft 2 "Reverse" 1 "Forward" 0 "Stopped" ;
-VAL_ 933 SlidingDoorState 1 "Closed" 0 "Open" ;
-
+CM_ BO_ 2147484423 "50Hz, 10 frames transmitted on state changes";
+BA_DEF_ "MultiplexExtEnabled" ENUM "No","Yes";
+BA_DEF_ "BusType" STRING ;
+BA_DEF_ BO_ "GenMsgBackgroundColor" STRING ;
+BA_DEF_ BO_ "GenMsgForegroundColor" STRING ;
+BA_DEF_ BO_ "matchingcriteria" INT 0 0;
+BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_DEF_ BO_ "matchingcriteria" INT 0 0;
+BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_DEF_ BO_ "matchingcriteria" INT 0 0;
+BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_DEF_ BO_ "matchingcriteria" INT 0 0;
+BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_DEF_ BO_ "matchingcriteria" INT 0 0;
+BA_DEF_ BO_ "filterlabeling" INT 0 0;
+BA_DEF_DEF_ "MultiplexExtEnabled" "No";
+BA_DEF_DEF_ "BusType" "CAN";
+BA_DEF_DEF_ "GenMsgBackgroundColor" "#ffffff";
+BA_DEF_DEF_ "GenMsgForegroundColor" "#000000";
+BA_DEF_DEF_ "matchingcriteria" 0;
+BA_DEF_DEF_ "filterlabeling" 0;
+BA_DEF_DEF_ "matchingcriteria" 0;
+BA_DEF_DEF_ "filterlabeling" 0;
+BA_ "GenMsgForegroundColor" BO_ 2147484497 "#000000";
+BA_ "GenMsgForegroundColor" BO_ 2147484423 "#000000";
+VAL_ 161 WheelMovingRight 2 "Reverse" 1 "Forward" 0 "Stopped";
+VAL_ 161 WheelMovingLeft 2 "Reverse" 1 "Forward" 0 "Stopped";
+VAL_ 163 WheelMovingRight 2 "Reverse" 1 "Forward" 0 "Stopped";
+VAL_ 163 WheelMovingLeft 2 "Reverse" 1 "Forward" 0 "Stopped";
+VAL_ 933 SlidingDoorState 1 "Closed" 0 "Open";
+VAL_ 2147484497 RearDoorState 2 "RearDoorOpen" 1 "RearDoorClosed";
+VAL_ 2147484197 HandbrakeState 3 "HandbrakeOn" 4 "HandbrakeOff";
+VAL_ 2147484423 CentralLockingFlagsB3 0 "Idle" 170 "Keyfob_unlock_request" 21 "Keyfob_lock_request_(doors_open)" 85 "Keyfob_lock_request_(doors_closed)" 10 "Interior_button_unlock_request" 1 "Interior_button_lock_request";
