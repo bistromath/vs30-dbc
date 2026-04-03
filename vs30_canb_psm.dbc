@@ -33,9 +33,12 @@ NS_ :
 
 BS_:
 
-BU_: ABS SlidingDoorController
+BU_: ABS DoorController CentralLocking Handbrake
+
+
 VAL_TABLE_ WheelDirection 2 "Reverse" 1 "Forward" 0 "Stopped" ;
 VAL_TABLE_ SlidingDoorState 1 "Closed" 0 "Open" ;
+
 
 
 BO_ 161 WheelSpeedRear: 8 ABS
@@ -50,8 +53,17 @@ BO_ 163 WheelSpeedFront: 8 ABS
  SG_ WheelSpeedRight : 16|14@1+ (0.068355,0) [0|1119.859965] "km/h" Vector__XXX
  SG_ WheelSpeedLeft : 40|14@1+ (0.068355,0) [0|1119.859965] "km/h" Vector__XXX
 
-BO_ 933 SlidingDoorController: 8 SlidingDoorController
+BO_ 933 SlidingDoorFrame: 8 DoorController
  SG_ SlidingDoorState : 12|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 775 CentralLockingFrame: 8 CentralLocking
+ SG_ CentralLockingFlagsB3 : 24|8@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 849 RearDoorFrame: 8 DoorController
+ SG_ RearDoorState : 0|0@1+ (1,0) [0|0] "" Vector__XXX
+
+BO_ 549 HandbrakeFrame: 8 Handbrake
+ SG_ HandbrakeState : 16|3@1+ (1,0) [0|0] "" Vector__XXX
 
 
 
@@ -64,6 +76,10 @@ CM_ SG_ 163 WheelMovingLeft "Wheel direction, left";
 CM_ SG_ 163 WheelSpeedRight "Wheel speed, right, km/h";
 CM_ SG_ 163 WheelSpeedLeft "Wheel speed, left, km/h";
 CM_ SG_ 933 SlidingDoorState "Sliding door state";
+CM_ BO_ 775 "50Hz rate, 10 frames transmitted on state changes";
+CM_ SG_ 775 CentralLockingFlagsB3 "Central locking state";
+CM_ SG_ 849 RearDoorState "Rear door state";
+CM_ SG_ 549 HandbrakeState "Handbrake state";
 BA_DEF_  "MultiplexExtEnabled" ENUM  "No","Yes";
 BA_DEF_  "BusType" STRING ;
 BA_DEF_DEF_  "MultiplexExtEnabled" "No";
@@ -74,4 +90,7 @@ VAL_ 161 WheelMovingLeft 2 "Reverse" 1 "Forward" 0 "Stopped" ;
 VAL_ 163 WheelMovingRight 2 "Reverse" 1 "Forward" 0 "Stopped" ;
 VAL_ 163 WheelMovingLeft 2 "Reverse" 1 "Forward" 0 "Stopped" ;
 VAL_ 933 SlidingDoorState 1 "Closed" 0 "Open" ;
+VAL_ 775 CentralLockingFlagsB3 0 "Idle" 1 "Interior_button_lock_request" 10 "Interior_button_unlock_request" 21 "Keyfob_lock_request_(doors_open)" 85 "Keyfob_lock_request_(doors_closed)" 170 "Keyfob_unlock_request" ;
+VAL_ 849 RearDoorState 1 "RearDoorClosed" 2 "RearDoorOpen" ;
+VAL_ 549 HandbrakeState 3 "HandbrakeOn" 4 "HandbrakeOff" ;
 
