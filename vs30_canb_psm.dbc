@@ -65,6 +65,12 @@ BO_ 923 PassengerDoorFrame: 8 DoorController
 BO_ 775 CentralLockingFrame: 8 CentralLocking
  SG_ CentralLockingFlagsB3 : 24|8@1+ (1,0) [0|0] "" Vector__XXX
 
+BO_ 794 DriverWindowFrame: 8 DoorController
+ SG_ DriverWindowClosed : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+
+BO_ 800 PassengerWindowFrame: 8 DoorController
+ SG_ PassengerWindowClosed : 13|1@1+ (1,0) [0|1] "" Vector__XXX
+
 BO_ 849 RearDoorFrame: 8 DoorController
  SG_ RearDoorState : 0|2@1+ (1,0) [0|3] "" Vector__XXX
 
@@ -89,6 +95,8 @@ CM_ SG_ 919 DriverDoorState "Driver door state";
 CM_ SG_ 923 PassengerDoorState "Passenger door state";
 CM_ BO_ 775 "50Hz rate, 10 frames transmitted on state changes";
 CM_ SG_ 775 CentralLockingFlagsB3 "Central locking state";
+CM_ SG_ 794 DriverWindowClosed "Driver window closed flag. Observed 1 when closed, 0 when open. Raw bytes 1-2 little-endian were 0x01e8 closed and 0x2148/0x224a open.";
+CM_ SG_ 800 PassengerWindowClosed "Passenger window closed flag. Observed 1 when closed, 0 when open. Raw bytes 1-2 little-endian were 0x01e8 closed and 0x0148/0x2148/0x224a/0x22dc open.";
 CM_ SG_ 849 RearDoorState "Rear door state";
 CM_ SG_ 885 Odometer "Odometer reading";
 CM_ SG_ 549 HandbrakeState "Handbrake state";
@@ -104,6 +112,8 @@ VAL_ 163 WheelMovingLeft 2 "Reverse" 1 "Forward" 0 "Stopped" ;
 VAL_ 933 SlidingDoorState 1 "Closed" 0 "Open" ;
 VAL_ 919 DriverDoorState 2 "Open" 1 "Closed" ;
 VAL_ 923 PassengerDoorState 2 "Open" 1 "Closed" ;
+VAL_ 794 DriverWindowClosed 1 "Closed" 0 "Open" ;
+VAL_ 800 PassengerWindowClosed 1 "Closed" 0 "Open" ;
 VAL_ 775 CentralLockingFlagsB3 0 "Idle" 1 "Interior_button_lock_request" 10 "Interior_button_unlock_request" 21 "Keyfob_lock_request_(doors_open)" 85 "Keyfob_lock_request_(doors_closed)" 170 "Keyfob_unlock_request" ;
 VAL_ 849 RearDoorState 1 "RearDoorClosed" 2 "RearDoorOpen" ;
 VAL_ 549 HandbrakeState 3 "HandbrakeOn" 4 "HandbrakeOff" ;
