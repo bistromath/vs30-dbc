@@ -56,6 +56,9 @@ BO_ 163 WheelSpeedFront: 8 ABS
 BO_ 933 SlidingDoorFrame: 8 DoorController
  SG_ SlidingDoorState : 12|1@1+ (1,0) [0|1] "" Vector__XXX
 
+BO_ 919 DriverDoorFrame: 8 DoorController
+ SG_ DriverDoorState : 12|2@1+ (1,0) [0|3] "" Vector__XXX
+
 BO_ 923 PassengerDoorFrame: 8 DoorController
  SG_ PassengerDoorState : 12|2@1+ (1,0) [0|3] "" Vector__XXX
 
@@ -79,6 +82,7 @@ CM_ SG_ 163 WheelMovingLeft "Wheel direction, left";
 CM_ SG_ 163 WheelSpeedRight "Wheel speed, right, km/h";
 CM_ SG_ 163 WheelSpeedLeft "Wheel speed, left, km/h";
 CM_ SG_ 933 SlidingDoorState "Sliding door state";
+CM_ SG_ 919 DriverDoorState "Driver door state";
 CM_ SG_ 923 PassengerDoorState "Passenger door state";
 CM_ BO_ 775 "50Hz rate, 10 frames transmitted on state changes";
 CM_ SG_ 775 CentralLockingFlagsB3 "Central locking state";
@@ -94,6 +98,7 @@ VAL_ 161 WheelMovingLeft 2 "Reverse" 1 "Forward" 0 "Stopped" ;
 VAL_ 163 WheelMovingRight 2 "Reverse" 1 "Forward" 0 "Stopped" ;
 VAL_ 163 WheelMovingLeft 2 "Reverse" 1 "Forward" 0 "Stopped" ;
 VAL_ 933 SlidingDoorState 1 "Closed" 0 "Open" ;
+VAL_ 919 DriverDoorState 2 "Open" 1 "Closed" ;
 VAL_ 923 PassengerDoorState 2 "Open" 1 "Closed" ;
 VAL_ 775 CentralLockingFlagsB3 0 "Idle" 1 "Interior_button_lock_request" 10 "Interior_button_unlock_request" 21 "Keyfob_lock_request_(doors_open)" 85 "Keyfob_lock_request_(doors_closed)" 170 "Keyfob_unlock_request" ;
 VAL_ 849 RearDoorState 1 "RearDoorClosed" 2 "RearDoorOpen" ;
